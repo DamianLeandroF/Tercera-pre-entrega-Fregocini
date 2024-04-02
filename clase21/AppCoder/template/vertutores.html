@@ -1,0 +1,38 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+
+
+{% block contenido %}
+
+    <main>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Lista de Tutores</title>
+        </head>
+        <body>
+            <h2>Lista de Tutores</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Curso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tutor in tutores %}
+                    <tr>
+                        <td>{{ tutor.nombre }}</td>
+                        <td>{{ tutor.curso.nombre }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </body>
+    </main>
+
+
+
+{% endblock %}
